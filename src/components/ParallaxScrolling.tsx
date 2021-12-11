@@ -15,44 +15,44 @@ const positions: Position[] = [
         },
         end: {
             percent: 0.5,
-            x: 0.5,
-            y: 0.5
+            x: 0.4,
+            y: 0.4
         },
     },
     {
         start: {
-            percent: 0,
+            percent: 0.15,
             x: 0.7,
             y: 0.4
         },
         end: {
             percent: 0.5,
-            x: 0.5,
-            y: 0.5
+            x: 0.4,
+            y: 0.4
         },
     },
     {
         start: {
-            percent: 0,
-            x: 0.2,
+            percent: 0.10,
+            x: 0.75,
             y: 0.8
         },
         end: {
             percent: 0.5,
-            x: 0.5,
-            y: 0.5
+            x: 0.4,
+            y: 0.4
         },
     },
     {
         start: {
             percent: 0,
-            x: 0.2,
-            y: 0.2
+            x: 0.6,
+            y: 0.65
         },
         end: {
             percent: 0.5,
-            x: 0.5,
-            y: 0.5
+            x: 0.4,
+            y: 0.4
         },
     },
 ]
@@ -73,10 +73,11 @@ export const ParallaxScrolling = () => {
 const ImageDiv = styled.div`
     display: block;
     position: absolute;
-    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
     width: 360px;
     height: 290px;
     background: url("http://placekitten.com/360/290");
+    -webkit-backface-visibility: hidden;
 `
 
 interface ParallaxImageProps {
