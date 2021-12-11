@@ -1,15 +1,14 @@
-/**
- * This phone was stolen from the internet
- * @constructor
- */
-export const Phone = () => {
-    return (
-        <div className="iphone-x">
-            <i>Speaker</i>
-            <b>Camera</b>
-            <s>10:24</s>
-            <span>Left action button</span>
-            <span>Right action button</span>
-        </div>
-    )
-}
+import styled from "@emotion/styled"
+
+export const Phone = styled.div`
+  display: block;
+  position: absolute;
+  width: 360px;
+  height: 700px;
+  background-color: #7371ee;
+  background-image: linear-gradient(60deg, #7371ee 1%, #a1d9d6 100%);
+  border-radius: 40px;
+  box-shadow: 0 0 0 11px #1f1f1f, 0 0 0 13px #191919, 0 0 0 20px #111;
+  -webkit-transform-style: preserve-3d;
+  -webkit-backface-visibility: hidden;
+`

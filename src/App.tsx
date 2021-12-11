@@ -1,11 +1,9 @@
-import React from 'react';
-import './App.css';
-import { ParallaxScrolling } from "./components/ParallaxScrolling";
+import React from "react"
+import "./App.css"
+import { ParallaxScrolling } from "./components/ParallaxScrolling"
 
 function App() {
-  return (
-    <ParallaxScrolling/>
-  );
+  return <ParallaxScrolling />
 }
 
-export default App;
+export default App
