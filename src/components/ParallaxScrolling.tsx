@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
 import React, { useEffect, useRef } from "react";
 import {Position} from "../models/Position";
+import {Phone} from "./Phone";
 
 const ParallaxBody = styled.div`
     height: 800vh;
@@ -55,18 +56,30 @@ const positions: Position[] = [
             y: 0.4
         },
     },
+    {
+        start: {
+            percent: 0,
+            x: 0.4,
+            y: 1.5
+        },
+        end: {
+            percent: 0.5,
+            x: 0.4,
+            y: 0.3
+        },
+    },
 ]
 
 
 export const ParallaxScrolling = () => {
-    // const { scrollOffset } = useScroll()
-
     return <ParallaxBody>
+        <Phone/>
         { positions.map((position,index) =>
-            <ParallaxImage key={index} position={position} />
+            <ParallaxImage key={index} position={position} >
+                <ImageDiv/>
+                {/*<Phone/>*/}
+            </ParallaxImage>
         )}
-        {/*<ParallaxImage position={positions[0]} />*/}
-
     </ParallaxBody>
 }
 
@@ -82,8 +95,9 @@ const ImageDiv = styled.div`
 
 interface ParallaxImageProps {
     position: Position,
+    children: JSX.Element
 }
-const ParallaxImage = ({position}: ParallaxImageProps) => {
+const ParallaxImage = ({position, children}: ParallaxImageProps) => {
     const elementRef = useRef<HTMLDivElement | null>(null)
 
     const requestRef = useRef(0)
@@ -109,7 +123,8 @@ const ParallaxImage = ({position}: ParallaxImageProps) => {
     },[elementRef.current, position])
 
 
-    return <ImageDiv ref={elementRef} />
+    return <div ref={elementRef}>{children}</div>
+    // return <ImageDiv ref={elementRef} />
 }
 
 // Finds coordinates on the line based according to percentage
