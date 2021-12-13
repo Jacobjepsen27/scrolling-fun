@@ -1,5 +1,4 @@
 import React from "react"
-import "./App.css"
 import { ParallaxScrolling } from "./components/ParallaxScrolling"
 
 function App() {

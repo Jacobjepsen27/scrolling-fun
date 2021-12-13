@@ -1,5 +1,5 @@
 /**
- * Holds information about when animation should start/end and from where.
+ * Contain information about when animation should start/end and from where.
  */
 export interface Position {
   start: {
